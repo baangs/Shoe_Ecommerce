@@ -1,1 +1,415 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+*, html, body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 5px 5px 5px 40px;
+  margin-top: 10px;
+}
+
+a.logo-title {
+  text-transform: uppercase;
+  color: black;
+}
+
+a span.logo-last {
+  color: #AA00FF;
+}
+
+header {
+  width: 100%;
+  display: block;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1330;
+  min-height: 40px;
+  max-height: 56px;
+  margin-bottom: 0px;
+  border-top: 0px;
+  top: 0;
+  border: 0px;
+}
+
+nav svg.menu {
+  width: 2.4em;
+  cursor: pointer;
+  margin: 3px 3px 0 8px;
+  padding: 5px;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.icons .user-icon {
+  margin: 3px 0 0;
+  padding: 5px;
+}
+
+.icons .shopping-cart {
+  margin: 3px 3px 0 0;
+  padding: 5px;
+}
+
+nav.slideout-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white;
+  height: 100vh;
+  width: 75%;
+  text-transform: capitalize;
+  display: none;
+}
+
+nav.slideout-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2.5em;
+}
+
+nav.slideout-menu a {
+  color: black;
+  padding: .6em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav.slideout-menu a:hover {
+  background: #E0E0E0;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.page-wrapper {
+  margin: 0 auto -50px;
+  min-height: 100vh;
+  padding-bottom: 20px;
+  z-index: 0;
+  padding-top: 55px;
+}
+
+.main-content-wrapper {
+  margin-bottom: auto;
+  margin-right: auto;
+  padding: 5px 8px 20px 8px;
+  min-height: 95%;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0 0 6px 0;
+  width: 100%;
+}
+
+.search {
+  margin: 2px -5px 5px 0px;
+}
+
+.input-wrapper {
+  margin: 0px 0px !important;
+  width: 100%;
+}
+
+.input {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4rem;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  height: 34px;
+  margin-bottom: 0px;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-radius: 0px;
+  border-style: solid !important;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+      -ms-writing-mode: lr-tb !important;
+          writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+  cursor: text;
+}
+
+button {
+  -webkit-writing-mode: horizontal-tb !important;
+      -ms-writing-mode: lr-tb !important;
+          writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  text-transform: none;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: visible;
+}
+
+span.search-button {
+  display: inline;
+  font-size: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.btn {
+  float: right;
+  height: 34px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  font-weight: normal;
+  border-radius: 0px;
+  z-index: 2;
+  margin-left: -1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+section.top-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-sellers-btn {
+  padding-right: 8px;
+  padding-left: 0px;
+  position: relative;
+  min-height: 1px;
+  float: left;
+  width: 33.33%;
+}
+
+.under-retail-btn {
+  padding-right: 4px;
+  padding-left: 4px;
+  position: relative;
+  min-height: 1px;
+  width: 33.33%;
+}
+
+.newest-btn {
+  padding-right: 0px;
+  padding-left: 8px;
+  position: relative;
+  min-height: 1px;
+  float: right;
+  width: 33.33%;
+}
+
+a.content-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  display: block;
+  width: 100%;
+  height: 34px;
+}
+
+aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #fff;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+}
+
+.show-filter-txt {
+  cursor: pointer;
+}
+
+.open-slide {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+aside span.filter-title {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 30px;
+  color: black;
+}
+
+.size {
+  margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.size label {
+  padding: 0px;
+  border: 0 none;
+  margin: 5px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.size label input[type="checkbox"],
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px, 1px, 1px, 1px);
+  /*maybe deprecated but to support legacy browsers */
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap;
+  /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+.size label .size-box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  padding: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  color: black;
+  font-size: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 50px;
+  border: 1px solid #E0E0E0;
+}
+
+.size label input[type="checkbox"]:focus ~ .size-box {
+  background: black;
+  -webkit-transition: none;
+  transition: none;
+  color: #fff;
+}
+
+.size label .size-box .checkbox-label {
+  margin: 2px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.product-wrapper {
+  width: 100%;
+}
+
+.product-wrapper a span.image-wrapper {
+  width: 100%;
+}
+
+.product-wrapper a span.image-wrapper img {
+  width: 5em;
+}
+/*# sourceMappingURL=main.css.map */
