@@ -1,14 +1,8 @@
-//justify-content aligns items horizontally, align-items aligns items vertically, flex-direction defines the directions of items placed in container. align seklf takes the same values as align items
-//when flex-direction is a column, justify-content changes to vertical and align-items changes to horizontal
-//when you set the flex-direction to revrsed column or row, start and end are also reversed.
-//using order we can change items values. Items have a default value of 0, but we can use this property to also set it to a positive or negative integer value (-2, -1, 0, 1, 2).
-//flex-flow is just flex-direction and flex-wrap combined. Ex flow-wrap: row wrap. 
-//You can use align-content to set how multiple lines are spaced apart from each other.
-//align-content determines the spacing between lines. while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.
-
+//GLOBAL
 *, html, body {
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
+    margin: 0;
 }
 
 a {
@@ -17,7 +11,7 @@ a {
 
 //NAVIGATION TOP (MOBILE)
 .logo {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     margin: 5px 5px 5px 40px;
@@ -40,39 +34,44 @@ header {
 
 nav {
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     right: 0;
     left: 0;
-    z-index: 1330;
+    z-index: 1030;
     min-height: 40px;
     max-height: 56px;
     margin-bottom: 0px;
-    border-top: 0px;
+    border-top: 3px;
     top: 0;
     border: 0px;
+    background: #fff;
     
     svg.menu {
-        width: 2.4em;
+        width: 2.2em;
         cursor: pointer;
         margin: 3px 3px 0 8px;
         padding: 5px;
+        margin-top: 6px;
     }
 }
 
 .icons {
     display: flex;
- 
+    cursor: pointer;
+    margin-top: 3px;
+    
     .user-icon {
         margin: 3px 0 0;
-        padding: 5px;
+        padding: 6px;
     }
 
     .shopping-cart {
         margin: 3px 3px 0 0;
-        padding: 5px;
+        padding: 6px;
     }
 }
 
@@ -109,33 +108,41 @@ nav.slideout-menu {
 
 //PAGE WRAPPER (MOBILE)
 .page-wrapper {
-    margin: 0 auto -50px;
     min-height: 100vh;
     padding-bottom: 20px;
     z-index: 0;
-    padding-top: 55px;
+    padding-top: 65px;
+}
+
+//MAIN-CONTAINER
+.main-container {
+    padding-left: 8px;
+    padding-right: 8px;
+    min-height: 95%;
 }
 
 //MAIN-CONTENT-WRAPPER (MOBILE)
 .main-content-wrapper {
-    margin-bottom: auto;
-    margin-right: auto;
-    padding: 5px 8px 20px 8px;
-    min-height: 95%;
+    position: relative;
+    
+}
+
+//CENTER WRAPPER (MOBILE)
+.center-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 //SEARCHFORM VIEW (MOBILE)
-form {
+.mobile-form {
     display: flex;
     flex-direction: row;
     padding: 0 0 6px 0;
     width: 100%;
+    margin: 2px 5px 5px 0px;
 }
 
-.search {
-    margin: 2px -5px 5px 0px;
-}
-
+//this is what we'll change in media query
 .input-wrapper {
     margin: 0px 0px !important;
     width: 100%;
@@ -172,25 +179,6 @@ input {
     cursor: text;
 }
 
-button {
-    writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-indent: 0px;
-    text-shadow: none;
-    text-transform: none;
-    align-items: flex-start;
-    overflow: visible;
-}
-
-span.search-button {
-    display: inline;
-    font-size: 0;
-    white-space: nowrap;
-    vertical-align: middle;
-}
-
 .btn {
     float: right;
     height: 34px;
@@ -210,9 +198,17 @@ span.search-button {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
+
+    &:hover {
+        background-color: #E0E0E0;
+    }
 }
 
 //TOP CONTENT BUTTONS (MOBILE)
+section {
+    margin-bottom: 10px;
+}
+
 section.top-content {
     display: flex;
     justify-content: space-between;
@@ -262,6 +258,27 @@ a.content-btn {
     display: block;
     width: 100%;
     height: 34px;
+
+    &:hover {
+        background-color: #E0E0E0;
+    }
+}
+
+//SHOW FILTERS/SORT BY (MOBILE)
+section.filter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.show-filter-txt {
+    cursor: pointer;
+}
+.open-slide {
+    transform: translateX(0%);
 }
 
 //ASIDE COLLAPSE SLIDE: SHOW FILTERS (MOBILE)
@@ -278,15 +295,7 @@ aside {
     transition: transform .5s ease-in-out;
 }
 
-//SHOW FILTERS CLICKABLE TITLE (MOBILE)
-.show-filter-txt {
-    cursor: pointer;
-}
-.open-slide {
-    transform: translateX(0%);
-}
-
-//SHOW FILTERS MENU: SIZE(S) (MOBILE)
+//SHOW FILTERS ASIDE MENU: SIZE(S) (MOBILE)
 aside span.filter-title {
     font-size: 1rem;
     font-weight: bold;
@@ -352,17 +361,277 @@ aside span.filter-title {
     text-align: center;
 }
 
-//SORT BY VIEW (MOBILE)
-
-//MAIN SHOES VIEW (MOBILE)
-.product-wrapper {
-    width: 100%;
+//SHOW FILTER MOBILE VIEW BUTTON
+.show-filters {
+    display: none;
+    padding: 13px 8px;
+    padding-left: 2px;
+    margin-right: auto;
+    line-height: 17px;
+    float: left;
+    font-size: 14px;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: fixed;
+    z-index: 1030;
+    bottom: 30px;
 }
 
-.product-wrapper a span.image-wrapper {
-    width: 100%;
+.filter-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.42;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #ccc;
+}
 
-    img {
-        width: 5em;
+button {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    text-transform: none;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+//SORT BY VIEW (MOBILE)
+.sorter {
+    display: flex;
+    padding: 10px 2px;
+    margin-left: auto;
+    width: auto !important;
+    white-space: nowrap;
+    float: right;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.title span {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: #777777;
+    padding-right: 8px;
+}
+
+.selected-sort {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: #000;
+    text-align: right;
+}
+
+//dropdown
+.sort-wrap {
+    transform: translateX(1000%);
+    background-color: #fff;
+    padding: 4px;
+    position: absolute;
+    top: 45px;
+    z-index: 9999;
+    margin: 0px;
+    right: 0;
+    border: 1px solid #E0E0E0;
+    min-width: 200px;
+    white-space: normal;
+    text-align: left;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.sort-options {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+        background-color: #E0E0E0;
     }
 }
+
+.open-sort {
+    transform: translateX(0%);
+}
+
+//MAIN SHOES VIEW (MOBILE)
+.products-container {
+    display: block;
+}
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+}
+
+.product-item {
+    display: flex;    
+    padding: 20px;
+    margin: 0px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    z-index: 1;
+    cursor: pointer;
+
+    a {
+        display: block;
+        color: #000;
+        width: 100%;
+        height: 100%;
+
+        span.image-wrapper {
+            display: block;
+            border: 0px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+
+            img {
+                display: block;
+                height: auto;
+                min-height: 50%;
+                max-width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+
+        span.title-wrapper {
+            display: block;
+            padding-bottom: 15px;
+            margin: 0px;
+            height: 36px;
+            overflow: hidden;
+            padding: 0px;
+            padding-top: 0px;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        span.price-wrapper {
+            display: block;
+            text-align: center;
+            font-size: 100%;
+            font-weight: 500;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0px;
+        }
+    }
+
+    &:hover {
+        border: 1px solid #000;
+    }
+}
+
+//MEDIA QUIERIES (RESPONSIVE WEB DESKTOP)
+@media only screen and (min-width: 768px ) {
+    .page-wrapper {
+        padding-top: 55px;
+    }
+
+    .show-filters {
+        display: block;
+    }
+
+    .btn-container {
+        display: none;
+    }
+
+    form.mobile-form {
+        vertical-align: middle;
+        width: 50%;
+        margin: auto;
+    }
+
+    a.content-btn {
+        font-size: 17px;
+        height: 37px;
+    }
+
+    .input {
+        height: 37px;
+    }
+
+    .btn {
+        height: 37px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+    .main-container {
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 0px 20px 0px;
+    }
+
+    .products-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+   .main-container {
+       width: 970px;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 20px 0px 20px 0px;
+   }
+
+   .products-wrapper {
+       display: grid;
+       grid-template-columns: repeat(4, auto);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+   .main-container {
+       width: 1170px;
+       margin-left: auto;
+       margin-right: auto;
+       padding: 20px 0px 20px 0px;
+   }
+
+   .products-wrapper {
+       display: grid;
+       grid-template-columns: repeat(4, auto);
+   }
+}
+
+
+
+
+
+
